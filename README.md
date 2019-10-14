@@ -8,51 +8,51 @@ mangi reduces food waste by allowing you to track nearby restaurants and cafes t
 but leftover food, which would otherwise be thrown away at the end of the day. "mangi" means
 "eat" in Italian, which emphasises our mission to reduce food waste, contributing to social good.
 Consumers can go to the restaurant to get the food or order food delivery right
-to their doorstep.
+to their doorstep.   
 Businesses can sign up for a business account and update their leftover food
 menu to be cleared by selling it at a discounted price to consumers.
 
 VIDEO:
-Watch the introduction video first
-link
+Watch the introduction video first  
+link: https://www.youtube.com/watch?v=y92ZTroJ2aE  
 
 ------------------
 
 INFORMATION ABOUT EACH FILE:
-__pycache__ folder: ignore this folder
-application.py: the main Python code that runs the website
-flask_session folder: contains information about the flask session when you run the website
-README.md: introductory file that you are reading right now
-requirements.txt: list of Python libraries that you must download for the code to work
-static folder: contains the CSS file for the styling of the website and the image files
-templates folder: contains the HTML files for displaying information on the website
-
-REQUIREMENTS TO RUN WEBSITE:
-Python 3
-Flask
-PostgreSQL
-For the list of Python libraries, refer to requirements.txt
+__pycache__ folder: ignore this folder  
+application.py: the main Python code that runs the website  
+flask_session folder: contains information about the flask session when you run the website  
+README.md: introductory file that you are reading right now  
+requirements.txt: list of Python libraries that you must download for the code to work  
+static folder: contains the CSS file for the styling of the website and the image files  
+templates folder: contains the HTML files for displaying information on the website  
+----------------------
+REQUIREMENTS TO RUN WEBSITE:  
+* Python 3  
+* Flask  
+* PostgreSQL  
+For the list of Python libraries, refer to requirements.txt  
 
 If you are using Python 3.7 on MacOS, run this command in the terminal to update
 Python certificates in order for geopy to run properly:
 /Applications/Python\ 3.7/Install\ Certificates.command
 
 HOW TO RUN WEBSITE:
-1. Open up your terminal window
-2. Navigate into the CEP Final Project folder
-3. Run "pip3 install -r requirements.txt" in your terminal window to make sure that all of the necessary Python packages are installed
-4. Set the environment variable FLASK_APP to be application.py. On a Mac or on Linux, the command to do this is "export FLASK_APP=application.py". On Windows, the command is instead "set FLASK_APP=application.py" in Command Prompt (preferable) and set $FLASK_APP=application.py in PowerShell
-5. Type "flask run" in the terminal window
-6. Go to the URL provided by flask (usually http://127.0.0.1:5000/)
-7. Tada! The website is now running!
+1. Open up your terminal window  
+2. Navigate into the CEP Final Project folder  
+3. Run "pip3 install -r requirements.txt" in your terminal window to make sure that all of the necessary Python packages are installed  
+4. Set the environment variable FLASK_APP to be application.py. On a Mac or on Linux, the command to do this is "export FLASK_APP=application.py". On Windows, the command is instead "set FLASK_APP=application.py" in Command Prompt (preferable) and set $FLASK_APP=application.py in PowerShell  
+5. Type "flask run" in the terminal window  
+6. Go to the URL provided by flask (usually http://127.0.0.1:5000/)  
+7. Tada! The website is now running!  
 
 --------------------
 
 FEATURES:
-Homepage (before sign in):
-- Beautiful front landing page
-- "Start Now" button leads to sign up page
-- Custom designed mangi logo
+Homepage (before sign in):  
+- Beautiful front landing page  
+- "Start Now" button leads to sign up page  
+- Custom designed mangi logo  
 - Introduction section when you scroll down
 - Search button and panel (although the search function does not work)
 - Consumer signup page
