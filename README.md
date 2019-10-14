@@ -106,7 +106,7 @@ INCOMPLETE/ FUTURE IMPROVEMENTS:
 ------------------
 
 SUMMARY:
-Overall very proud of this project as we spent more than 200 hours in total thinking
+Overall very proud of this project as we spent more than 60 hours in total thinking
 of the idea, designing the frontend user interface, learning and implementing the map api,
 and integrating everything all together into one functional website through all the
 challenges and miscommunications.
