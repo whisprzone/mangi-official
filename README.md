@@ -50,7 +50,7 @@ HOW TO RUN WEBSITE:
 
 --------------------
 
-FEATURES:
+FEATURES:<br><br>
 Homepage (before sign in):  
 - Beautiful front landing page  
 - "Start Now" button leads to sign up page  
