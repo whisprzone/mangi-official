@@ -8,7 +8,7 @@ mangi reduces food waste by allowing you to track nearby restaurants and cafes t
 but leftover food, which would otherwise be thrown away at the end of the day. "mangi" means
 "eat" in Italian, which emphasises our mission to reduce food waste, contributing to social good.
 Consumers can go to the restaurant to get the food or order food delivery right
-to their doorstep.     
+to their doorstep.<br><br>
 Businesses can sign up for a business account and update their leftover food
 menu to be cleared by selling it at a discounted price to consumers.
 
