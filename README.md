@@ -8,7 +8,7 @@ mangi reduces food waste by allowing you to track nearby restaurants and cafes t
 but leftover food, which would otherwise be thrown away at the end of the day. "mangi" means
 "eat" in Italian, which emphasises our mission to reduce food waste, contributing to social good.
 Consumers can go to the restaurant to get the food or order food delivery right
-to their doorstep.   
+to their doorstep.     
 Businesses can sign up for a business account and update their leftover food
 menu to be cleared by selling it at a discounted price to consumers.
 
@@ -18,7 +18,7 @@ link: https://www.youtube.com/watch?v=y92ZTroJ2aE
 
 ------------------
 
-INFORMATION ABOUT EACH FILE:
+INFORMATION ABOUT EACH FILE:  
 __pycache__ folder: ignore this folder  
 application.py: the main Python code that runs the website  
 flask_session folder: contains information about the flask session when you run the website  
@@ -26,7 +26,9 @@ README.md: introductory file that you are reading right now
 requirements.txt: list of Python libraries that you must download for the code to work  
 static folder: contains the CSS file for the styling of the website and the image files  
 templates folder: contains the HTML files for displaying information on the website  
+
 ----------------------
+
 REQUIREMENTS TO RUN WEBSITE:  
 * Python 3  
 * Flask  
