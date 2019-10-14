@@ -1,6 +1,6 @@
 
 # mangi: food waste tracker and delivery
-CEP Final Project by Koo Yu Tang and Surya Nayar
+CEP Final Project by Koo Yu Tang and Surya Nayar<br>
 September-October 2019
 
 INTRODUCTION:
@@ -106,7 +106,7 @@ INCOMPLETE/ FUTURE IMPROVEMENTS:
 ------------------
 
 SUMMARY:
-Overall very proud of this project as we spent more than 60 hours in total thinking
+Overall very proud of this project as we spent countless hours in total thinking
 of the idea, designing the frontend user interface, learning and implementing the map api,
 and integrating everything all together into one functional website through all the
 challenges and miscommunications.
