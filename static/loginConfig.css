@@ -1,0 +1,18 @@
+h1{
+	background-color: #000080;
+	color: #FFFFFF;
+	font-family: Helvetica, Arial, sans-serif;
+	padding: 10px;
+	margin: 0;
+}
+.verticallyCentered{
+	position: fixed;
+	width: 100%;
+	top: 30%;
+
+}
+.center{
+	display: block;
+	margin: 0px auto;
+}
+	

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main-styles.css') }}">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Roboto:300,500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+	 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
+    </head>
+
+    <body>
+	    {% if not signing_up_or_logging_in %}
+      <div class="combinedbar">
+
+        <!-- Search button at the top navigation bar -->
+        <span class="searchbutton" onclick="openNav()">
+          <img class="searchicon" src="/static/icons/white-search-icon.jpg">
+        </span>
+
+        <!-- search panel that comes up when you click the search button -->
+        <div id="searchpanelid" class="searchpanel">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <form class="searchform" action="{{ url_for('search') }}" method="post">
+            <input class="searchbar" type="text" name="term" placeholder="Search restaurants near you">
+            <button type="submit" class="searchsubmit" id="searchiconid"> <img class="searchbaricon" src="/static/icons/dark-search-icon.png"> </button>
+          </form>
+        </div>
+
+	<!-- the mangi title and slogan -->
+        <div class="navbar">
+          <div class="navtitles">
+            <a href="{{ url_for('index') }}">
+              <img class="logo" src="/static/mangi logo round.png">
+            </a>
+            <a class="titletext" href="{{ url_for('index') }}">mangi</a>
+          </div>
+
+          <div class="navbuttons">
+            {% if session["logged_in"] == True %}
+              <a class="navbutton" href="{{ url_for('tracker') }}">
+                <img class="navicon" src="/static/icons/tracker-icon.svg">
+                <span class="navbuttontooltip"> Tracker </span>
+              </a>
+              <a class="navbutton" href="{{ url_for('delivery') }}">
+                <img class="navicon" src="/static/icons/delivery-icon.svg">
+                <span class="navbuttontooltip"> Delivery </span>
+              </a>
+
+	      <p class="navbutton">Welcome, {{ session["fullname"] }}! <a class="logoutbutton" href="{{ url_for('logout') }}"> [Logout] </a></p>
+
+	      <a class="navbutton", href="{{ url_for('settings') }}">
+		      <img class="navicon" src="/static/icons/settings-icon.svg">
+		      <span class="navbuttontooltip"> My account </span>
+	      </a>
+
+            {% else %}
+              <a class="navbutton" href="{{ url_for('signup') }}">Sign up</a>
+              <a class="navbutton" href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- the box shadow below the navbar -->
+      <div class="shadowbar"></div>
+
+      {% block header %}
+      {% endblock %}
+
+      {% block body %}
+      {% endblock %}
+      {% endif %}
+    </body>
+    <script src="{{ url_for('static', filename='thewebpagescript.js') }}"></script>
+</html>

@@ -1,0 +1,129 @@
+@charset "UTF-8";
+@import url('https://gitlab.com/adium/MagicMirror/blob/master/font/HelveticaNeue-Light.ttf');
+html{
+	overflow-x: hidden;
+}
+.navbar{
+	background-color: #548235 ; /* change to emerald green */
+	width: 100%;
+	height: 50px;
+}
+.navbar .loggedin{
+	float: right;
+	margin: auto;
+}
+
+.navbar .loggedin .welcome{
+	font-family: Helvetica, Arial, sans-serif;
+	height: 50px;
+	vertical-align: middle;
+	display: table-cell;
+	color: #FFFFFF;
+	background-color: #548235;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.navbar .loggedin .logout{
+	font-family: Helvetica, Arial, sans-serif;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: darkgreen;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.navbar .loggedin .logout:hover{
+	background-color: #000080;
+	color: #FFFFFF;
+}
+
+.navbar .loginAndSignup{
+	float: right;
+	margin: auto;
+}
+.navbar .loginAndSignup .login{
+	font-family: Helvetica, Arial, sans-serif;
+	display: table-cell;
+	vertical-align: middle;
+	height: 50px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: darkgreen;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.navbar .loginAndSignup .login:hover{
+	background-color: #000080;
+	color: #FFFFFF;
+}
+.navbar .loginAndSignup .signup{
+	font-family: Helvetica, Arial, sans-serif;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: darkgreen;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.navbar .loginAndSignup .signup:hover{
+	background-color: #000080;
+	color: #FFFFFF;
+}
+
+.searchbar{
+	background-color: #31814C;
+	border: 0px;
+	height: 90px;
+	width: 100%;
+	display: table;
+	
+}
+.searchbar .title{
+	font-family: Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 19px;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 10px;
+}
+
+.searchbar .subsearch{
+	margin: 0 auto;
+	width: 40%;
+}
+
+.searchbar .subsearch .search{
+	font-family: Helvetica, Arial, sans-serif;
+       	color: #000080; 
+	background-color: #FFFFFF; 
+	border: 0px; 
+	font-size: 14px; 
+	text-align: left; 
+	width: 88%; 
+	padding: 0 0 0 10px;
+	border-radius: 10px 0 0 10px; 
+	display: inline-block; 
+	height: 40px; 
+	float: left; 
+}
+
+.searchbar::-webkit-input-placeholder{
+	color: #CECECE;
+	font-weight: 100;
+}
+
+.searchbar .subsearch .buttonclass{
+	color: #FFFFFF;
+	background-color: #000080;
+	border-radius: 0 10px 10px 0;
+	border: 0px;
+	height: 40px;
+	width: calc(12% - 10px);
+	top: 50%;
+	margin: 0;
+	padding: 0;
+	float: right;
+}

@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Tracker
+{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tracker-styles.css') }}">
+
+<h1 class="big-nice-font">
+	{{ all_restaurants }}
+</h1>
+{% endblock %}
+
+{% block body %}
+<div id="mapid">
+
+</div>
+
+
+
+<style>
+#mapid{
+	height: 640px;
+	width: 600px;
+	margin: auto auto;
+}
+</style>
+<script>
+	var mymap = L.map('mapid').setView([1.3672, 103.876], 13);
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',maxZoom: 18,id: 'mapbox.streets',accessToken: 'pk.eyJ1Ijoic3VyeWFuYXlhciIsImEiOiJjazBuaWduNXUwMDV5M2JyeDl2enB1OXAxIn0.T2B2LqR6rybJPsBKJ7Xu-g'}).addTo(mymap);
+var geojsondata = {{ data | safe }};
+	L.geoJSON(geojsondata).addTo(mymap);
+
+</script>
+
+
+<div class="leftpanelheading">
+  <p class="leftpanelheadingtext"> Near you </p>
+</div>
+
+<div class="leftpanel">
+  {% set restaurantlist = restaurantlist %}
+  <!-- foodlist data is just a placeholder -->
+
+  {% if restaurantlist == [] %}
+    <p class="placecontainer"> No restaurants near you. </p>
+  {% else %}
+    {% for res in restaurantlist %}
+	    <a class="placecontainer" href="/tracker/{{res[0]}}">
+        <div class="placeinfo">
+          <p class="containertext heading" name="restaurantname"> {{ res[0] }} </p>
+          <p class="smalltext"> {{ res[1] }} </p>
+	  <p class="smalltext"> {{ res[2] }} </p>
+        </div>
+      </a>
+    {% endfor %}
+  {% endif %}
+  <br><br><br><br><br><br><br><br>
+</div>
+
+<div class="rightpanel">
+  <img class="restaurantphoto" src="https://www.foodielovin.com/wp-content/uploads/2018/04/Scampi-Restaurant-New-York2.jpg">
+  <h1 class="restaurantname"> {{ res_info[0] }} </h1>
+  <p class="smalltext"> {{res_info[9]}} waste | 0.6km</p>
+  <p class="smalltext"> {{res_info[5]}} restaurant</p>
+  <p class="smalltext"> {{ res_info[6] }}</p>
+
+  <h1 class="restaurantname"> Order Leftover Food </h1>
+
+  {% if menu == {} %}
+    <p class="container"> No leftover food. </p>
+  {% else %}
+    {% for food, info in menu.items() %}
+      <div class="container">
+        <div class="textandicon">
+          <p class="containertext heading"> {{ food }} </p>
+          <a href="{{ url_for('add_order', restaurant=res_info[0], foodname=food, address=session['main_address'], fullname=session['fullname']) }}"> <img class="plusicon" src="/static/icons/plus-icon.png"> </a>
+        </div>
+        <p class="containertext"> ${{ info[0] }} | Qty: {{ info[1] }} </p>
+      </div>
+    {% endfor %}
+  {% endif %}
+  <br><br><br><br><br>
+</div>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+		<title>Movie: {{movie["title"]}}</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="/static/movieConfig.css"></link>
+	</head>
+
+	<body style="margin: 0;">
+		<h1>{{movie["title"]}}</h1>
+		<form action="/search" method="post">
+			<input name="movie" class="search" placeholder="Search..."/>
+		</form>
+		<img src={{movie["poster"]}} class="poster"/>
+		<br>
+		<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d25018.51031594332!2d103.83091373432633!3d1.36451153910471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smcdonalds!5e0!3m2!1sen!2ssg!4v1567817970130!5m2!1sen!2ssg" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+		<br>
+		<div class="movieinfo">
+			<br><p1 class="importantInfo">{{movie["description"]}}<br><br>Released in <b>{{movie["year"]}}</b><br>Written by {{movie["writer"]}}<br>Directed by <b>{{movie["director"]}}</b><br>Starring <b>{{movie["actors"]}}</b><br>Rated {{movie["imdb_rating"]}}<br><br></p1>
+			<p2 class="moreInfo"><b>More information</b><br><br>Genre: <b>{{movie["genre"]}}</b><br>Country or countries: <b>{{movie["country"]}}</b><br>Language(s): <b>{{movie["language"]}}</b><br>Runtime: <b>{{movie["runtime"]}} minutes</b><br>Rating in Singapore: <b>{{movie["rated"]}}</b></p2>
+		</div><br>
+		{% if reviews_present == True %}
+			<p4 style="font-family: Helvetica, Arial, sans-serif; color: darkgreen; display: block; font-size: 25px; width: 100%; text-align: center;"><b><i>REVIEWS</i></b></p4>
+			{% for user, review in reviews.items() %}
+				<div class="userreview">Review by <b>{{user}}</b><br><br>{{review["review"]}}<br>Rating: <b>{{review["rating"]}}</b></div>
+			{% endfor %}
+		{% endif %}
+		<br>
+		<form method="post">
+			<textarea class="review" name="review" placeholder="Once you've submitted your review, you can edit it by simply typing in another review and clicking submit."></textarea><br>
+			<p1 style="font-family: Helvetica, Arial, sans-serif; color: darkgreen; display: block; text-align: center;">Rate the movie: <select name="rating"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select><p1><br>
+
+
+
+			<p style = "font-family: Helvetica, Arial, sans-serif; color: #AB2311"><b>{{error_message}}</b><p><br>
+			<button class="submit">Submit review!</button>
+		</form>
+		<br><br>
+
+
+	</body>
+</html>

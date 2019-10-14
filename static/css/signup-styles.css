@@ -1,0 +1,113 @@
+
+/* sign up page */
+.combined-signup-container {
+  position: absolute;
+  top: 65px;
+  width: 100%;
+  display: flex;
+  margin: 0px;
+  z-index: 2;
+}
+
+.pizza-image {
+  float: left;
+  height: 1100px;
+  width: 370px;
+  display: inline-block;
+}
+
+.signupcontainer {
+  margin: 60px 0px 30px 200px;
+  padding: 50px 0px 30px 0px;
+  display: inline-block;
+  width: 600px;
+  float: right;
+  text-align: center;
+  box-shadow: 0px 0px 16px #b5b5b5;
+}
+
+.signuplogo {
+  width: 150px;
+  height: 100px;
+  display: block;
+  margin: 0px auto 20px auto;
+}
+
+.buttoncontainer {
+  width: 100%;
+  text-align: center;
+  font-size: 0px;
+}
+
+.optionbutton {
+  display: inline-block;
+  padding: 20px 40px 20px 40px;
+  border: 0px;
+  margin: 0px 0px 20px 0px;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 5px 10px 16px #c2c2c2;
+}
+
+.selected {
+  background-color: #95ff00;
+  border: 3px solid #95ff00;
+  color: black;
+}
+
+.unselected {
+  background-color: white;
+  border: 3px solid #95ff00;
+  color: #636363;
+}
+
+.signupform {
+  text-align: center;
+}
+
+.bigheading {
+  display: block;
+  text-align: center;
+  margin: 0px auto 20px auto;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.billingheading {
+  display: inline-flex;
+  margin: 20px auto 10px auto;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.textbox {
+  display: block;
+  margin: 20px auto 20px auto;
+  border: 0px;
+  border-bottom: 2px solid grey;
+  font-family: "Roboto";
+  font-size: 18px;
+  height: 30px;
+  width: 330px;
+}
+
+.submitbutton {
+  display: block;
+  background-color: #262626;
+  color: white;
+  font-family: "Montserrat";
+  margin: 30px auto 30px auto;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 20px;
+  height: 60px;
+  width: 300px;
+  box-shadow: 5px 10px 13px #888888;
+}

@@ -1,0 +1,34 @@
+{% extends "layout_business.html" %}
+
+{% block title %}
+  Orders
+{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/orders-styles.css') }}">
+
+<h1 class="large-font">Incoming Orders</h1>
+{% endblock %}
+
+{% block body %}
+
+<div class="screencontainer">
+  <div class="ordercontainer">
+    {% if orders == {} %}
+      <p class="container"> No orders. </p>
+    {% else %}
+      {% for i in orders %}
+        <div class="container">
+          <div>
+            <p class="containertext heading"> {{ i[0] }} </p>
+	    <a class="tick" href="/orders_tick_item/{{ i[3] | replace("/", "_") }}"> <img class="tick-icon" src="/static/icons/tick-icon.png"> </a>
+          </div>
+          <p class="containertext"> Customer: {{ i[1] }} </p>
+          <p class="containertext"> Address: {{ i[2] }} </p>
+          <p class="containertext"> {{ i[3] }} </p>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

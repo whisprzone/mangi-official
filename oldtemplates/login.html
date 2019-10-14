@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html style="overflow-x: hidden;">
+	<head>
+		<title>Login to your Rehashed IMDB account</title>
+		<link rel="stylesheet" type="text/css" href="/static/loginConfig.css"></link>
+	</head>
+	<body style="margin: 0;">
+		<h1>login to rehashed imdb</h1>
+		<form method="post" class="verticallyCentered">
+			<input style="border-color: #000080; border-radius: 6px; color: #000080; font-family: Helvetica, Arial, sans-serif; padding: 5px; font-size: 14pt;" class="center" name="username" placeholder="Username"/><br>
+			<input style="border-color: #000080; border-radius: 6px; color: #000080; font-family: Helvetica, Arial, sans-serif; padding: 5px; font-size: 14pt;"class="center" type="password" name="password" placeholder="Password"/><br>
+			<button style="border: 0px; color: #FFFFFF; background-color: #000080; font-size: 12px; border-radius: 6px; font-family: Helvetica, Arial, sans-serif; font-size: 12pt; padding: 10px;" class="center">Log in</button><br><br>
+			<p1 class="center" style="font-family: Helvetica, Arial, sans-serif; color: #000080; text-align: center;"><b>{{ error_message }}</b></p1>
+		</form>
+	</body>
+</html>

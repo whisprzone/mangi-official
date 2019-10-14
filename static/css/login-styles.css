@@ -1,0 +1,81 @@
+
+/* sign up page */
+.combined-login-container {
+  position: absolute;
+  top: 65px;
+  width: 100%;
+  display: flex;
+  margin: 0px;
+  z-index: 2;
+}
+
+.mexican-food-image {
+  float: right;
+  height: 100%;
+  display: inline-block;
+}
+
+.logincontainer {
+  margin: 60px 200px 30px auto;
+  padding: 60px 0px 30px 0px;
+  display: inline-block;
+  width: 550px;
+  height: 480px;
+  float: right;
+  text-align: center;
+  box-shadow: 0px 0px 16px #b5b5b5;
+}
+
+.loginlogo {
+  width: 150px;
+  height: 100px;
+  display: block;
+  margin: 0px auto 20px auto;
+}
+
+.loginform {
+  text-align: center;
+}
+
+.bigheading {
+  display: block;
+  margin: 0px auto 10px auto;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.subheadingtext{
+  display: block;
+  margin: 15px auto 15px auto;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+.textbox {
+  display: block;
+  margin: 20px auto 20px auto;
+  border: 0px;
+  border-bottom: 2px solid grey;
+  font-family: "Roboto";
+  font-size: 18px;
+  height: 30px;
+  width: 300px;
+}
+
+.submitbutton {
+  display: block;
+  background-color: #262626;
+  color: white;
+  font-family: "Montserrat";
+  margin: 30px auto 30px auto;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 20px;
+  height: 60px;
+  width: 300px;
+  box-shadow: 5px 10px 13px #888888;
+}

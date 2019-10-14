@@ -1,0 +1,25 @@
+.accountinformation {
+	font-family: "Montserrat";
+	font-size: 20px;
+	color: black;
+}
+.classictext{
+	font-family: "Roboto";
+	font-size: 15px;
+	color: black;
+	padding-left: 30px;
+}
+.deletebutton{
+	display: block;
+	background-color: #262626;
+	box-shadow: 5px #888888;
+	font-family: "Roboto";
+	color: white;
+	font-size: 30px;
+	border: 0px;
+	border-radius: 7px;
+	margin: auto;
+	height: 50px;
+}
+
+

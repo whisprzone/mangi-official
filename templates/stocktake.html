@@ -1,0 +1,80 @@
+{% extends "layout_business.html" %}
+
+{% block title %}
+  Stocktake Menu
+{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stocktake-styles.css') }}">
+
+<h1 class="large-font">Stocktake Menu</h1>
+{% endblock %}
+
+{% block body %}
+
+<h2 class="mid-font blockheading">Current Food Waste Level</h2>
+
+<div class="buttoncontainer">
+  {% for selection in range(selectionlist|length) %}
+    {% if indicatorlist[selection] == indicator %}
+      <a class="optionbutton selected" href="{{ url_for('stocktake', indicator=indicatorlist[selection]) }}">{{ selectionlist[selection] }}</a>
+    {% else %}
+      <a class="optionbutton unselected" href="{{ url_for('stocktake', indicator=indicatorlist[selection]) }}">{{ selectionlist[selection] }}</a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div class="screencontainer">
+  <form class="ordercontainer" action="{{ url_for('stocktake_update') }}" method="post">
+
+    <div class="headingcontainer">
+      <h2 class="mid-font orders-heading">Food Items</h2>
+      <a href="{{ url_for('stocktake_add_item', indicator = indicator) }}"> <img class="plusicon" src="/static/icons/plus-icon.png"> </a>
+    </div>
+
+    <p class="containertext"> Update quantities or prices that have changed </p>
+
+    {% if menu == {} %}
+      <div class="container">
+        <p class="containertext"> No food items have been added yet.</p>
+      </div>
+    {% else %}
+      {% for food, info in menu.items() %}
+        <div class="container">
+          <input class="headingtextbox" type="text" name="{{ food }} name" placeholder="{{ food }}">
+
+          <div class="text-and-textbox">
+            <p class="containertext">Quantity: </p>
+            <input class="textbox" type="text" name="{{ food }} qty" placeholder="{{ info[1] }}">
+          </div>
+	  <a style="margin: auto; float: right; padding-right: 10px; font-size: 50px; text-decoration: none; color: black;" href="/stocktake_remove/{{ food }}">-</a>
+          <div class="text-and-textbox">
+            <p class="containertext"> Discounted price: $</p>
+            <input class="textbox" type="text" name="{{ food }} price" placeholder="{{ info[0] }}">
+	  </div>
+
+
+        </div>
+      {% endfor %}
+      <button class="submitbutton">Update</button>
+    {% endif %}
+  </form>
+
+  {% if button_clicked %}
+    <div id="mymodal" class="modal">
+    	<div class="modal-content">
+    		<a class="close" href="{{url_for('stocktake', indicator = indicator)}}">&times;</a>
+
+    		<form method="POST">
+    			<input class="item" name="itemname" placeholder="Name of food item">
+          <input class="quantity" type="number" name="quantity" placeholder="Quantity">
+    			<input class="quantity" type="number" name="discounted_price" placeholder="Price">
+    			<button class="save" name="savebtn">Save and add to menu</button>
+    		</form>
+    	</div>
+    </div>
+  {% endif %}
+</div>
+
+<br>
+{% endblock %}

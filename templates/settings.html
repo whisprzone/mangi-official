@@ -1,0 +1,24 @@
+{% if session["mode"] == "business" }
+{% extends "layout_business.html" %}
+{% else %}
+	{% extends "layout.html" %}
+	{% endif % }
+{% block title %}
+  Settings
+{% endblock %}
+
+{% block header %}
+	<h1 class="big-nice-font">Settings</h1><br><br><br><br>
+	<link rel="stylesheet" href="/static/css/settings-styles.css">
+{% endblock %}
+
+{% block body %}
+	<h1 class="accountinformation">{{ name }}'s account</h1><br><br><br>
+	<p1 class="classictext">Your address: <b>{{ address }}</b><br><br>
+	<p1 class="classictext">Your email: <b>{{ email }}</b></p1><br><br>
+	<p1 class="classictext">Your phone number: <b>{{ phone_number }}</b> </p1><br><br>
+	<p1 class="classictext">Your information is unchangeable. To change anything, delete your account (irreversible!) and sign up again.</p1><br><br>
+	<form action="{{ url_for("delete_account", name = name)}}" method="POST">
+		<button class="deletebutton">Delete my account</button>
+	</form>
+{% endblock %}

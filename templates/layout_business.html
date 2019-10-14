@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main-styles.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,500&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+	    {% if not signing_up_or_logging_in %}
+      <div class="combinedbar">
+
+        <!-- Search button at the top navigation bar -->
+        <span class="searchbutton" onclick="openNav()">
+          <img class="searchicon" src="/static/icons/white-search-icon.jpg">
+        </span>
+
+        <!-- search panel that comes up when you click the search button -->
+        <div id="searchpanelid" class="searchpanel">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <form class="searchform" action="{{ url_for('search') }}" method="post">
+            <input class="searchbar" type="text" name="term" placeholder="Search restaurants near you">
+            <button type="submit" class="searchsubmit" id="searchiconid"> <img class="searchbaricon" src="/static/icons/dark-search-icon.png"> </button>
+          </form>
+        </div>
+
+	<!-- the mangi title and slogan -->
+        <div class="navbar">
+          <div class="navtitles">
+            <a href="{{ url_for('index') }}">
+              <img class="logo" src="/static/mangi logo round.png">
+            </a>
+            <a class="titletext" href="{{ url_for('index') }}">mangi</a>
+            <h3>business</h3>
+          </div>
+
+          <div class="navbuttons">
+            {% if session["logged_in"] == None %}
+              <a class="navbutton" href="{{ url_for('signup') }}">Sign up</a>
+              <a class="navbutton" href="{{ url_for('login') }}">Login</a>
+
+            {% elif session["logged_in"] == True %}
+              <a class="navbutton" href="{{ url_for('stocktake', indicator=session['indicator']) }}">
+                <img class="navicon" src="/static/icons/stocktake-icon.png">
+                <span class="navbuttontooltip"> Stocktake </span>
+              </a>
+              <a class="navbutton" href="{{ url_for('orders') }}">
+                <img class="navicon" src="/static/icons/delivery-icon.svg">
+		<span class="navbuttontooltip"> Orders </span>
+		
+	      </a>
+	      <a class="navbutton" href="{{ url_for('settings') }}">
+		      <img class="navicon" src="/static/icons/settings-icon.svg">
+		      <span class="navbuttontooltip"> My account </span>
+	      </a>
+   	      <p class="navbutton">Welcome, {{ session["fullname"] }}! <a class="logoutbutton" href="{{ url_for('logout') }}"> [Logout] </a></p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- the box shadow below the navbar -->
+      <div class="shadowbar"></div>
+
+      {% block header %}
+      {% endblock %}
+
+      {% block body %}
+      {% endblock %}
+      {% endif %}
+    </body>
+    <script src="{{ url_for('static', filename='thewebpagescript.js') }}"></script>
+</html>

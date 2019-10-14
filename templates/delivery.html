@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+  Delivery
+{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/delivery-styles.css') }}">
+
+<h1 class="big-nice-font">Your order(s)</h1>
+{% endblock %}
+
+{% block body %}
+
+{% if orders == [] %}
+  <p class="container"> No orders. </p>
+{% else %}
+  {% for i in orders %}
+    <div class="ordercontainer">
+      <div class="container centered">
+        <p class="heading"> {{ i[0] }} </p>
+        <p class="containertext"> {{ i[1] }} </p>
+        <p class="containertext"> Estimated time to arrival: 10 min </p>
+        <p class="containertext"> {{ i[2] }} </p>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}
+
+{% endblock %}

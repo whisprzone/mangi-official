@@ -1,0 +1,60 @@
+{% if session["mode"] == "business" %}
+	{% extends "layout_business.html" %}
+{% else %}
+	{% extends "layout.html" %}
+{% endif %}
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home-styles.css') }}">
+
+<div class="homecontainer">
+  <img class="bigphoto" src="/static/home-background.jpg">
+  <div class="centeredtext">
+    <h2>Everyday, tons of perfectly good food is thrown away</h2>
+    <p class="subtext"> Food waste tracker and delivery. </p>
+    <a class="startbutton" href="/signup"> Start now </a>
+    <img class="scroll-down-arrows" src="/static/icons/scroll-down-arrows.png">
+  </div>
+
+	<div class="screencontainer">
+		<div class="textcontainer">
+      <img class="intrologo" src="/static/mangi logo.png">
+
+			<h1 class="big-nice-font">How does it work?</h1>
+			<p class="normaltext">
+			  <span class="bold">mangi</span> reduces food waste by allowing you to track nearby restaurants
+				and cafes that have good but leftover food, which would otherwise be thrown away at the end of
+				the day.<br><br>
+			  You can go to the restaurant to get the food or choose food delivery right
+			  to your doorstep.
+			</p>
+
+			<br><br>
+
+			<h1 class="big-nice-font">What if the leftover food has gone bad?</h1>
+			<p class="normaltext">
+			  <span class="bold">mangi</span> strictly requires all participating businesses and
+				restaurants to only report and serve leftover food that is still good to eat, so you
+				can rest assured that all food on this service is safe for consumption.
+			</p>
+
+			<br><br>
+
+			<h1 class="big-nice-font">How do I sign up?</h1>
+			<p class="normaltext">
+			  You can sign up for mangi <a class="signuphere" href="{{ url_for('signup') }}">here</a>!
+				<br><br>
+				For interested businesses or restaurants, <br>
+				sign up <a class="signuphere" href="{{ url_for('business_signup') }}">here</a>!
+			</p>
+
+		</div>
+	</div>
+
+</div>
+
+<br><br><br><br><br><br>
+{% endblock %}

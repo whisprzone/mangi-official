@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search results</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="/static/searchResultsConfig.css"></link>
+	</head>
+	<body style="margin: 0;">
+		<h1>Search results for {{id}}</h1>
+		<form action="/search" method="post">
+			<input name="movie" class="search" placeholder="Search..."/>
+		</form>
+		<br> <br> <br>
+		{% for individualMovie in movies %}
+		<div class="search-result">
+			<img src="{{individualMovie["poster"]}}" alt="Poster for {{id}}" style="-moz-border-radius: 20px 0 0 20px; border-radius: 20px 0 0 20px; height: 200px; float: left;"/>
+			<br><a href="/movie/{{individualMovie["title"]}}" style="font-family: Helvetica, Arial, sans-serif; font-size: 1.50vw; color: white; margin-left: 155px; margin-top: 10px; font-weight: bold; display: block;">{{individualMovie["title"]}}</a> <br>
+			<p2 style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; color: white; margin-left: 155px; display: block;">{{individualMovie["description"]}}</p2><br> <!-- too lazy to use classes --!>
+			<p3 style="font-family: Helvetica, Arial, sans-serif; font-size: 16px; color: white; margin-left: 155px; display: block;">Released in <b>{{individualMovie["year"]}}</b><br>Directed by <b>{{individualMovie["director"]}}</b> and starring <b>{{individualMovie["actors"]}}</b></p3>
+			</div> <br>
+		{% endfor %}
+			</body>
+</html>

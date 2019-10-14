@@ -1,0 +1,88 @@
+html{
+	overflow-x: hidden;
+}
+h1{
+	margin: 0;
+	padding: 10px;
+	width: 100%;
+	background-color: green;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+	font-size: 1.25vw;
+}
+
+.search{
+	background-color: #006400;
+	width: 100%;
+	padding: 10px;
+	border: 0px;
+	color: #FFFFFF;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 1vw;
+}
+
+.poster{
+	height: 300px;
+	border-radius: 20px 20px 20px 20px;
+	margin: 40px auto;
+	display: block;
+}
+.movieinfo{
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: #C13C1C;
+	border-radius: 20px;
+	margin: 10px auto;
+	width: 60%;
+	padding: 15px;
+}
+.movieinfo .importantInfo{
+	font-size: 13pt;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+
+}
+.movieinfo .moreInfo{
+	font-size: 11pt;
+	font-family: Helvetica, Arial, sans-serif;
+	color: #FFFFFF;
+}
+
+.review{
+	font-family: Helvetica, Arial, sans-serif;
+	border-style: dashed;
+	margin: 0 auto;
+	display: block;
+	color: #AB2311;
+	padding: 15px;
+	border-radius: 15px;
+	font-size: 16px;
+	width: 40%;
+	height: 200px;
+	
+}
+.submit{
+	border-radius: 15px;
+	font-family: Helvetica, Arial, sans-serif;
+	display: block;
+	margin: 0 auto;
+	padding: 10px;
+	font-size: 13px;
+	border: 0px;
+	background-color: darkblue;
+	color: white;
+}
+.scale{
+	display: block;
+	text-align: center;
+
+}
+.userreview{
+	margin: 20px auto;
+	width: 50%;
+	display: block;
+	border-radius: 15px;
+	background-color: #AB2311;
+	color: white;
+	padding: 15px;
+	font-family: Helvetica, Arial, sans-serif;
+}	

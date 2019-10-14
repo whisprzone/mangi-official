@@ -1,0 +1,82 @@
+{% extends "layout_business.html" %}
+
+{% block title %}
+  Stocktake Menu
+{% endblock %}
+
+{% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stocktake-styles.css') }}">
+
+<h1 class="large-font">Stocktake Menu</h1>
+{% endblock %}
+
+{% block body %}
+
+<h2 class="mid-font blockheading">Current Food Waste Level</h2>
+
+<div class="buttoncontainer">
+  {% for selection in range(selectionlist|length) %}
+    {% if indicatorlist[selection] == indicator %}
+      <a class="optionbutton selected" href="{{ url_for('stocktake', indicator=indicatorlist[selection]) }}">{{ selectionlist[selection] }}</a>
+    {% else %}
+      <a class="optionbutton unselected" href="{{ url_for('stocktake', indicator=indicatorlist[selection]) }}">{{ selectionlist[selection] }}</a>
+    {% endif %}
+  {% endfor %}
+</div>
+
+
+<!-- foodlist data is just a placeholder -->
+
+<div class="screencontainer">
+  <form class="ordercontainer" action="" method="post">
+
+    <div class="headingcontainer">
+      <h2 class="mid-font orders-heading">Food Items</h2>
+      <a href="{{ url_for('stocktake_add_item', indicator = indicator) }}" ><img class="plusicon" src="/static/icons/plus-icon.png"></button>
+
+    </div>
+
+    <p class="containertext"> Update quantities or prices that have changed </p>
+
+    {% if foodlist == {} %}
+      <div class="container">
+        <p class="containertext">Your menu is empty.</p>
+      </div>
+    {% else %}
+      {% for key, value in foodlist.items() %}
+        <div class="container">
+          <p class="containertext heading"> {{ key }} </p>
+
+          <div class="text-and-textbox">
+            <p class="containertext">Quantity: </p>
+            <input class="textbox" type="text" name="{{ value[0] }} qty" placeholder="{{ value[0] }}">
+          </div>
+
+          <div class="text-and-textbox">
+            <p class="containertext"> Discounted price: $</p>
+            <input class="textbox" type="text" name="{{ value[1] }} price" placeholder="{{ value[1] }}">
+          </div>
+
+        </div>
+      {% endfor %}
+    {% endif %}
+    <button class="submitbutton">Update</button>
+  </form>
+</div>
+{% if button_clicked %}
+<div id="mymodal" class="modal">
+	<div class="modal-content">	
+		<span class="close" href="{{url_for('stocktake', indicator = indicator)}}">&times;</span>
+
+		<form method="POST">
+			<input class="item" name="itemname" placeholder="Name of food item">
+			<input class="quantity" type="number" name="discounted_price" placeholder="Price">
+			<input class="quantity" type="number" name="quantity" placeholder="Quantity">
+			<button class="save" name="savebtn">Save and add to menu</button>
+		</form>
+	</div>
+</div>
+
+<br>
+{% endif %}
+{% endblock %}

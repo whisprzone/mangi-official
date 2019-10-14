@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Movie Info
+{% endblock %}
+
+{% block header %}
+  <h2> {{ info['Title'] }} <span class="big-nice-font"> ({{ info['Year'] }}) </span></h2>
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    {{ info['Runtime'] }} &ensp; | &ensp; {{ info['Genre'] }} &ensp; | &ensp; IMDB Rating: {{ info['imdbRating'] }}
+    <img src="{{ info['Poster'] }}">
+    {{ info['Plot'] }} <br><br>
+    <span class="movie-page-label"> Director(s): </span> {{ info['Director'] }} <br>
+    <span class="movie-page-label"> Actors: </span> {{ info['Actors'] }} <br>
+    <span class="movie-page-label"> IMDB ID: </span> {{ info['imdbID'] }} <br><br>
+
+    <h2> Reviews: </h2>
+
+    {% if session.get("login-info") == None %}
+      <p> You have to <a href="{{ url_for('login') }}"> log in </a> to submit a review </p>
+    {% elif session["login-info"][0] in reviews_authors %}
+      <p> You have already submitted a review for this movie. </p>
+    {% else %}
+      <form action="{{ url_for('review_submitted', imdb_id = info['imdbID'], movie = info['Title']) }}" method="post">
+        Your Rating:
+        <div>
+          <p class="ratingbuttons"> 1 </p>
+          <input class="ratingbuttons" type="radio" name="rating" value="1">
+          <input class="ratingbuttons" type="radio" name="rating" value="2">
+          <input class="ratingbuttons" type="radio" name="rating" value="3">
+          <input class="ratingbuttons" type="radio" name="rating" value="4">
+          <input class="ratingbuttons" type="radio" name="rating" value="5">
+          <input class="ratingbuttons" type="radio" name="rating" value="6">
+          <input class="ratingbuttons" type="radio" name="rating" value="7">
+          <input class="ratingbuttons" type="radio" name="rating" value="8">
+          <input class="ratingbuttons" type="radio" name="rating" value="9">
+          <input class="ratingbuttons" type="radio" name="rating" value="10">
+          <p class="ratingbuttons"> 10 </p>
+        </div>
+
+        <input class="reviewtitlebox" type="text" name="review-title" placeholder="Review Title">
+        <textarea class="reviewtextbox" name="review-text" rows="8" cols="60" placeholder="Write a review!"></textarea>
+        <button class="submitbutton">Submit</button>
+      </form>
+    {% endif %}
+
+    <br>
+
+    {% if reviews == [] %}
+      <div>
+        <p> There are no other reviews for this movie. </p>
+      </div>
+    {% else %}
+      {% for review in reviews %}
+        <div class="resultbox">
+          <h2> {{ review[5] }} </h2>
+          <p> <span class="movie-page-label"> by </span> {{ review[1] }} </p>
+          <p> <span class="movie-page-label"> Rating: </span> {{ review[4] }} </p>
+          <p> {{ review[6] }} </p>
+        </div>
+      {% endfor %}
+    {% endif %}
+
+  </div>
+{% endblock %}

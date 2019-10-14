@@ -1,0 +1,32 @@
+@charset UTF-8;
+html{
+	overflow-x: hidden;
+}
+h1{
+	font-family: Helvetica, Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	line-height: 60px;
+	height: 60px;
+	vertical-align: middle;
+	text-align: center;
+	background-color: #FF8366;
+	color: #00240F;
+}
+p1{
+	color: darkgreen;
+	font-size: 18px;
+	font-weight: 100;
+	text-align: center;
+	display: block;
+	width: 100%;
+	font-family: Helvetica, Arial, sans-serif;
+}
+img{
+	display: block;
+	height: 400px;
+	margin: 0px auto;
+}
+
+	

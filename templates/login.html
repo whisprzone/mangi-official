@@ -1,0 +1,29 @@
+
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login-styles.css') }}">
+
+<div class="combined-login-container">
+	<div class="logincontainer">
+		<img class="loginlogo" src="/static/mangi logo.png">
+
+    <form class="loginform" action="{{ url_for('login') }}" method="post">
+			<p class="bigheading"> Login </p>
+			<p class="subheadingtext"> Consumers and businesses </p>
+      <input class="textbox" type="text" name="email" placeholder="Email">
+      <input class="textbox" type="password" name="password" placeholder="Password">
+			<button class="submitbutton">Enter</button>
+
+    </form>
+    <p1 style="font-family: Roboto; text-align: center; display: block;"> {{ error_message }} </p1>
+	</div>
+
+	<img class="mexican-food-image" src="/static/mexicanfood.png">
+</div>
+
+{% endblock %}

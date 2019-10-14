@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Search Results
+{% endblock %}
+
+
+{% block header %}Results{% endblock %}
+
+
+{% block body %}
+    {% if results == [] %}
+      <p class="container"> No results found. </p>
+    {% else %}
+      {% for result in results %}
+        <div class="resultbox">
+          <a class="result-title" href="{{ url_for('movies', imdb_id = result[4]) }}"> {{ result[1] }} <span class="year">({{ result[2] }})</span></a>
+          <p> Runtime: {{ result[3] }} min </p>
+          <p> Rating: {{ result[5] }} </p>
+        </div>
+      {% endfor %}
+    {% endif %}
+{% endblock %}
