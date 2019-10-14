@@ -19,13 +19,13 @@ link: https://www.youtube.com/watch?v=y92ZTroJ2aE
 ------------------
 
 INFORMATION ABOUT EACH FILE:  
-__pycache__ folder: ignore this folder  
-application.py: the main Python code that runs the website  
-flask_session folder: contains information about the flask session when you run the website  
-README.md: introductory file that you are reading right now  
-requirements.txt: list of Python libraries that you must download for the code to work  
-static folder: contains the CSS file for the styling of the website and the image files  
-templates folder: contains the HTML files for displaying information on the website  
+* __pycache__ folder: ignore this folder  
+* application.py: the main Python code that runs the website  
+* flask_session folder: contains information about the flask session when you run the website  
+* README.md: introductory file that you are reading right now  
+* requirements.txt: list of Python libraries that you must download for the code to work  
+* static folder: contains the CSS file for the styling of the website and the image files  
+* templates folder: contains the HTML files for displaying information on the website  
 
 ----------------------
 
